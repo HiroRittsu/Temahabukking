@@ -69,16 +69,14 @@ def pull_msgs(event):
 '''
 
 
-# 受け取り
 @app.route("/callback", methods=['POST'])
 def callback():
-    id = ''
-    events = None
+    id = 0
     signature = request.headers['X-Line-Signature']
 
     # get request body as text
     body = request.get_data(as_text=True)
-    # app.logger.info("Request body: " + body)
+    app.logger.info("Request body: " + body)
 
     # parse webhook body
     try:
@@ -98,7 +96,7 @@ def callback():
             continue
         if not isinstance(event.message, TextMessage):
             continue
-        print("メッセージ受け取り")
+
         msgs.append([id, event.message.text])
 
     return 'OK'
