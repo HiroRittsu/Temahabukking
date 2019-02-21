@@ -4,7 +4,7 @@ import random
 import sys
 import time
 import re
-
+print(os.getcwd())
 sys.path.append(os.getcwd() + '/../lib/')
 from lib import LineApp
 import ControlDB
