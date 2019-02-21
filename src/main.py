@@ -173,8 +173,8 @@ def option():
 
 def main():
     while True:
-        print(app.get_msgs())
-        #app.push_msgs(userID, 'debug: デバッグモード')
+        if not len(app.get_msgs()) == 0:
+            app.push_msgs(userID, app.get_msgs().pop(0)[1])
         time.sleep(1)
         # exam_schedule([[8, 10], [12, 20], [21, 30]])
         # option()
