@@ -36,39 +36,6 @@ parser = WebhookParser('4ceb98627c0c99db6aa38531c54c3b02')
 app = Flask(__name__)
 ###################################
 
-'''
-@app.route("/callback", methods=['POST'])
-def callback():
-    global userId
-    global groupId
-    # get X-Line-Signature header value
-    signature = request.headers['X-Line-Signature']
-
-    # get request body as text
-    body = request.get_data(as_text=True)
-    app.logger.info("Request body: " + body)
-
-    print(json.loads(body))
-
-    userId = json.loads(body)["events"][0]["source"]["userId"]
-    #groupId = json.loads(body)["events"][0]["source"]["groupId"]
-
-    # handle webhook body
-    try:
-        handler.handle(body, signature)
-        # handler.add(body, signature)
-    except InvalidSignatureError:
-        abort(400)
-
-    return 'OK'
-    
-@handler.add(MessageEvent, message=TextMessage)
-def pull_msgs(event):
-    msgs.append(event.message.text)
-
-'''
-
-
 @app.route("/callback", methods=['POST'])
 def callback():
     id = 0
