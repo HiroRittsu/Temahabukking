@@ -28,9 +28,10 @@ if channel_access_token is None:
     print('Specify LINE_CHANNEL_ACCESS_TOKEN as environment variable.')
     sys.exit(1)
 
-line_bot_api = LineBotApi(channel_access_token)
-handler = WebhookHandler(channel_secret)
-parser = WebhookParser(channel_secret)
+line_bot_api = LineBotApi(
+    '/07Z+OlPxitHyS23cLdU+jdE7XOhZJ8ABueC4ctVy/chTD3sxn3qUTRN66UoUH/weuD3MkL7twkVGs9Ik3tjAcD+NHBXU7t9HcRi+ebCcwuJq+RAG77Ad3P7WplaOgCx8qovCfUON3LiV5OZndRLtgdB04t89/1O/w1cDnyilFU=')
+handler = WebhookHandler('4ceb98627c0c99db6aa38531c54c3b02')
+parser = WebhookParser('4ceb98627c0c99db6aa38531c54c3b02')
 
 app = Flask(__name__)
 ###################################
@@ -79,7 +80,6 @@ def callback():
     body = request.get_data(as_text=True)
     # app.logger.info("Request body: " + body)
 
-    print("debug")
     # parse webhook body
     try:
         events = parser.parse(body, signature)

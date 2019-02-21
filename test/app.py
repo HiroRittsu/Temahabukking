@@ -32,7 +32,8 @@ from linebot.models import (
 app = Flask(__name__)
 
 # get channel_secret and channel_access_token from your environment variable
-line_bot_api = LineBotApi('/07Z+OlPxitHyS23cLdU+jdE7XOhZJ8ABueC4ctVy/chTD3sxn3qUTRN66UoUH/weuD3MkL7twkVGs9Ik3tjAcD+NHBXU7t9HcRi+ebCcwuJq+RAG77Ad3P7WplaOgCx8qovCfUON3LiV5OZndRLtgdB04t89/1O/w1cDnyilFU=')
+line_bot_api = LineBotApi(
+    '/07Z+OlPxitHyS23cLdU+jdE7XOhZJ8ABueC4ctVy/chTD3sxn3qUTRN66UoUH/weuD3MkL7twkVGs9Ik3tjAcD+NHBXU7t9HcRi+ebCcwuJq+RAG77Ad3P7WplaOgCx8qovCfUON3LiV5OZndRLtgdB04t89/1O/w1cDnyilFU=')
 parser = WebhookParser('4ceb98627c0c99db6aa38531c54c3b02')
 
 
@@ -57,10 +58,10 @@ def callback():
         if not isinstance(event.message, TextMessage):
             continue
 
-        #line_bot_api.reply_message(
-        #    event.reply_token,
-        #    TextSendMessage(text=event.message.text)
-        #)
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=event.message.text)
+        )
 
     return 'OK'
 
