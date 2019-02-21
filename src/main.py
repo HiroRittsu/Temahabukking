@@ -8,9 +8,9 @@ import re
 print(os.getcwd())
 sys.path.append(os.getcwd().replace('/src', ''))
 from lib import LineApp
-import ControlDB
-import WeblioTranslate
-import JISHO_ORG
+from lib import ControlDB
+from lib import WeblioTranslate
+from lib import JISHO_ORG
 
 app = LineApp.LineApp()
 ControlDB.init('botDB')
