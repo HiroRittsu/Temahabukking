@@ -1,10 +1,11 @@
 import datetime
+import os
 import random
 import sys
 import time
 import re
 
-sys.path.append('../lib/')
+sys.path.append(os.getcwd() + '/../lib/')
 from lib import LineApp
 import ControlDB
 import WeblioTranslate
