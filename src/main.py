@@ -5,7 +5,7 @@ import time
 import re
 
 sys.path.append('../lib/')
-import LineApp
+from lib import LineApp
 import ControlDB
 import WeblioTranslate
 import JISHO_ORG
@@ -171,9 +171,11 @@ def option():
 
 def main():
     while True:
-        exam_schedule([[8, 10], [12, 20], [21, 30]])
-        option()
+        print(app.get_msgs())
         time.sleep(1)
+        # exam_schedule([[8, 10], [12, 20], [21, 30]])
+        # option()
+        # time.sleep(1)
 
 
 if __name__ == '__main__':
