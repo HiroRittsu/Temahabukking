@@ -98,7 +98,7 @@ def callback():
             continue
         if not isinstance(event.message, TextMessage):
             continue
-
+        print("メッセージ受け取り")
         msgs.append([id, event.message.text])
 
     return 'OK'
