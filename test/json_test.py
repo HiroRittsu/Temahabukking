@@ -28,9 +28,7 @@ def post_text(user_id, text):
                     "imageSize": "cover",
                     "imageBackgroundColor": "#FFFFFF",
                     "title": "レシピ",
-                    "text": "ご飯\n"
-                            "ケチャップ\n"
-                            "たまごぉ\n",
+                    "text": '牡蠣 - 酒 - 玉ねぎ - にんじん - バター - にんにく - しょうが',
                     "defaultAction": {
                         "type": "uri",
                         "label": "View detail",
