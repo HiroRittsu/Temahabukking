@@ -14,10 +14,13 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage, ImageSendMessage, ImageMessage,
+    MessageEvent, TextMessage, TextSendMessage, ImageSendMessage, ImageMessage, StickerMessage, AudioMessage,
 )
 
 msgs = []
+image = []
+audio = []
+sticker = []
 
 #################handler##########
 # get channel_secret and channel_access_token from your environment variable
@@ -63,14 +66,16 @@ def callback():
 
     # if event is MessageEvent and message is TextMessage, then echo text
     for event in events:
-        print(type(event))
-        print(type(event.message))
         if not isinstance(event, MessageEvent):
             continue
-        if not isinstance(event.message, TextMessage):
-            continue
-
-        msgs.append([id, event.message.text])
+        if isinstance(event.message, TextMessage):
+            msgs.append([id, event.message.text])
+        if isinstance(event.message, ImageMessage):
+            image.append([id, event.message.id])
+        if isinstance(event.message, StickerMessage):
+            sticker.append([id, event.message.id])
+        if isinstance(event.message, AudioMessage):
+            audio.append([id, event.message.id])
 
     return 'OK'
 
