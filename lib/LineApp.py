@@ -14,7 +14,8 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage, ImageSendMessage, ImageMessage,
+    MessageEvent,
+    TextMessage, ImageMessage, AudioMessage
 )
 
 msgs = []
@@ -72,14 +73,14 @@ def callback():
 
     return 'OK'
 
-@app.route(MessageEvent, message=ImageMessage)
-def handle_image(event):
-    print("handle_image:", event)
 
-    message_id = event.message.id
-    message_content = line_bot_api.get_message_content(message_id)
-
-    image = BytesIO(message_content.content)
+# 画像、音声メッセージの場合
+@handler.add(MessageEvent, message=(ImageMessage, AudioMessage))
+def handle_image_audio_message(event):
+    content = line_bot_api.get_message_content(event.message.id)
+    with open('file', 'w') as f:
+        for c in content.iter_content():
+            f.write(c)
 
 
 #####################################################
@@ -105,7 +106,7 @@ class LineApp:
         if not id == '':
             line_bot_api.push_message(
                 id,
-                TextSendMessage(str)
+                # TextSendMessage(str)
             )
             return
 
@@ -116,10 +117,10 @@ class LineApp:
         if not id == '':
             line_bot_api.push_message(
                 id,
-                ImageSendMessage(
-                    original_content_url=url,
-                    preview_image_url=url
-                )
+                # ImageSendMessage(
+                #    original_content_url=url,
+                #    preview_image_url=url
+                # )
             )
             return
 
