@@ -9,11 +9,6 @@ from io import BytesIO
 sys.path.append(os.getcwd().replace('/src', ''))
 from lib import LineApp
 
-game_flag = False
-sorry_flag = False
-angry_flag = False
-work_flag = False
-tired_flag = False
 app = LineApp.LineApp()
 
 userID = 'U444d8a9ca45523b6fcda0226769d9983'
@@ -65,12 +60,26 @@ def template(thumbnail, link, text):
 
 
 def main():
+    game_flag = False
+    sorry_flag = False
+    angry_flag = False
+    work_flag = False
+    tired_flag = False
+
     while True:
         if not len(app.get_msgs()) == 0:
             msg = app.get_msgs().pop(0)[1]
             history_msgs.append(msg)
             if msg == '今日のご飯':
                 app.push_msgs(userID, 'ご飯を提案します')
+
+                # case1
+                if game_flag == True:
+                    # カツ丼
+                    thumbnail = 'https://t4.ftcdn.net/jpg/01/46/63/19/240_F_146631973_bHTvB7Djehzsz1DW6U1TK4Rl3ZQLTA0v.jpg'
+                    link = 'https://sites.google.com/view/migly-sample/%E3%83%9B%E3%83%BC%E3%83%A0'
+                    text = '牡蠣：10 個（200 g）\n酒：大さじ 2\n玉ねぎ：1/2 個（100 g）\nにんじん：1/3 本（60 g）\nバター：20 g\nにんにく・しょうが（すりおろし）：各小さじ 1'
+                    app.push_json(template(thumbnail, link, text))
 
             if msg == '試合':
                 game_flag = True

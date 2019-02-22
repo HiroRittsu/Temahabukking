@@ -114,7 +114,7 @@ class LineApp:
         else:
             print("not addr")
 
-    def push_json(self, user_id, data: json):
+    def push_json(self, data: json):
         header = {
             "Content-Type": "application/json",
             "Authorization": "Bearer {" + channel_access_token + "}"
