@@ -15,6 +15,7 @@ from linebot.exceptions import (
 )
 from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage, ImageSendMessage, ImageMessage, StickerMessage, AudioMessage,
+    PostbackEvent,
 )
 
 msgs = []
@@ -77,6 +78,16 @@ def callback():
             audio.append([id, event.message.id])
 
     return 'OK'
+
+
+# ボタンの入力を受け取るPostbackEvent
+@handler.add(PostbackEvent)
+def on_postback(event):
+    reply_token = event.reply_token
+    user_id = event.source.user_id
+    postback_msg = event.postback.data
+
+    print(postback_msg)
 
 
 #####################################################
