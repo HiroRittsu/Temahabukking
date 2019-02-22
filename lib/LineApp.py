@@ -137,3 +137,6 @@ class LineApp:
 
     def get_msgs(self):
         return msgs
+
+    def get_postback(self):
+        return postback
