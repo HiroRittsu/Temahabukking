@@ -7,6 +7,7 @@ from argparse import ArgumentParser
 from io import BytesIO
 
 from flask import Flask, request, abort
+import requests
 from linebot import (
     LineBotApi, WebhookHandler, WebhookParser
 )
@@ -22,7 +23,7 @@ msgs = []
 image = []
 audio = []
 sticker = []
-button_list = []
+postback = []
 
 #################handler##########
 # get channel_secret and channel_access_token from your environment variable
@@ -68,8 +69,7 @@ def callback():
 
     for event in events:
         if isinstance(event, PostbackEvent):
-            print("POST")
-            print(event.postback.data)
+            postback.append(event.postback.data)
         if not isinstance(event, MessageEvent):
             continue
         if isinstance(event.message, TextMessage):
@@ -113,6 +113,13 @@ class LineApp:
 
         else:
             print("not addr")
+
+    def push_json(self, user_id, data: json):
+        header = {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer {" + channel_access_token + "}"
+        }
+        print(requests.post('https://api.line.me/v2/bot/message/push', headers=header, data=json.dumps(data)))
 
     def push_img(self, id, url):
         if not id == '':

@@ -25,6 +25,45 @@ def emotion_analysis():
     return random.random()
 
 
+def template(thumbnail, link, text):
+    data = {
+        'to': userID,
+        "messages": [
+            {
+                "type": "template",
+                "altText": "This is a buttons template",
+                "template": {
+                    "type": "buttons",
+                    "thumbnailImageUrl": thumbnail,
+                    "imageAspectRatio": "rectangle",
+                    "imageSize": "cover",
+                    "imageBackgroundColor": "#FFFFFF",
+                    "title": "レシピ",
+                    "text": text,
+                    "defaultAction": {
+                        "type": "uri",
+                        "label": "View detail",
+                        "uri": link
+                    },
+                    "actions": [
+                        {
+                            "type": "postback",
+                            "label": "注文します",
+                            "data": "yes"
+                        },
+                        {
+                            "type": "postback",
+                            "label": "注文しません",
+                            "data": "no"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+    return data
+
+
 def main():
     while True:
         if not len(app.get_msgs()) == 0:
@@ -43,7 +82,7 @@ def main():
                 work_flag = True
             if msg == '疲れ':
                 tired_flag = True
-        time.sleep(1)
+        time.sleep(0.1)
 
 
 if __name__ == '__main__':

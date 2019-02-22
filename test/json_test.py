@@ -34,7 +34,7 @@ def post_text(user_id, text):
                     "defaultAction": {
                         "type": "uri",
                         "label": "View detail",
-                        "uri": "https://www.dinos.co.jp/kp/defaultMall/images/goods/D20/9154/etc/FD1734c1.jpg?Mode=main1s"
+                        "uri": "https://sites.google.com/view/migly-sample/%E3%83%9B%E3%83%BC%E3%83%A0"
                     },
                     "actions": [
                         {
