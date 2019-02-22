@@ -21,6 +21,10 @@ def emotion_analysis():
 
 
 def template(thumbnail, link, text):
+    # 60文字超える場合
+    if len(text) >= 60:
+        text = text[0:53] + '\n詳細はタップ'
+
     data = {
         'to': userID,
         "messages": [
@@ -78,7 +82,7 @@ def main():
                     # カツ丼
                     thumbnail = 'https://t4.ftcdn.net/jpg/01/46/63/19/240_F_146631973_bHTvB7Djehzsz1DW6U1TK4Rl3ZQLTA0v.jpg'
                     link = 'https://sites.google.com/view/migly-sample/%E3%83%9B%E3%83%BC%E3%83%A0'
-                    text = '牡蠣：10 個（200 g）\n酒：大さじ 2'
+                    text = '牡蠣：10 個（200 g）\n酒：大さじ 2\n玉ねぎ：1/2 個（100 g）\nにんじん：1/3 本（60 g）\nバター：20 g\nにんにく・しょうが（すりおろし）：各小さじ 1'
                     app.push_json(template(thumbnail, link, text))
 
             if '試合' in msg:
