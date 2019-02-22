@@ -72,8 +72,7 @@ def callback():
 
     return 'OK'
 
-
-@handler.add(MessageEvent, message=ImageMessage)
+@app.route(MessageEvent, message=ImageMessage)
 def handle_image(event):
     print("handle_image:", event)
 
