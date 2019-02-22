@@ -20,30 +20,20 @@ def post_text(user_id, text):
         "messages": [
             {
                 "type": "template",
-                "altText": "This is a buttons template",
+                "altText": "this is a confirm template",
                 "template": {
-                    "type": "buttons",
-                    "thumbnailImageUrl": "https://www.dinos.co.jp/kp/defaultMall/images/goods/D20/9154/etc/FD1734c1.jpg?Mode=main1s",
-                    "imageAspectRatio": "rectangle",
-                    "imageSize": "cover",
-                    "imageBackgroundColor": "#FFFFFF",
-                    "title": "レシピ",
-                    "text": '牡蠣 - 酒 - 玉ねぎ - にんじん - バター - にんにく - しょうが',
-                    "defaultAction": {
-                        "type": "uri",
-                        "label": "View detail",
-                        "uri": "https://sites.google.com/view/migly-sample/%E3%83%9B%E3%83%BC%E3%83%A0"
-                    },
+                    "type": "confirm",
+                    "text": "材料の受け取りはどちらにしますか？",
                     "actions": [
                         {
-                            "type": "postback",
-                            "label": "注文します",
-                            "data": "action=buy&itemid=123"
+                            "type": "message",
+                            "label": "店舗で",
+                            "text": "店舗"
                         },
                         {
-                            "type": "postback",
-                            "label": "注文しません",
-                            "data": "action=add&itemid=123"
+                            "type": "message",
+                            "label": "自宅で",
+                            "text": "自宅"
                         }
                     ]
                 }
