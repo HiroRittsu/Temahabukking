@@ -68,7 +68,7 @@ def callback():
         id = json.loads(body)["events"][0]["source"]["groupId"]
 
     for event in events:
-        if str(event) == '<class \'list\'>':
+        if str(type(event)) == '<class \'list\'>':
             button_list = event
             print(button_list)
         if not isinstance(event, MessageEvent):
