@@ -68,9 +68,9 @@ def callback():
         id = json.loads(body)["events"][0]["source"]["groupId"]
 
     for event in events:
-        print(type(event))
         if not isinstance(event, PostbackEvent):
-            print(event.postback)
+            print("POST")
+            print(event.postback.data)
         if not isinstance(event, MessageEvent):
             continue
         if isinstance(event.message, TextMessage):
