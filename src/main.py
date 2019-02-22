@@ -54,6 +54,11 @@ def template(thumbnail, link, title, text):
                             "type": "postback",
                             "label": "注文しません",
                             "data": "no"
+                        },
+                        {
+                            "type": "postback",
+                            "label": "キャンセル",
+                            "data": "cancel"
                         }
                     ]
                 }
@@ -92,7 +97,8 @@ def main():
                     text = 'とんかつ（チキンでも可） - じゃがいも - 人参 - 玉ねぎ - 福神漬け - オリーブオイル（食材炒め用） - バーモントカレー中辛 - こくまろ甘口 - ゴールデンカレー甘口 - S&Bカレーパウダー - 塩・胡椒 - 醤油 - オイスターソース - かつおダシ'
                     app.push_json(template(thumbnail, link, title, text))
 
-                    if response_wait() == 'no':
+                    wait = response_wait()
+                    if wait == 'no':
                         app.push_msgs(userID, '別の料理を提案します')
                         # 牡蠣カレー
                         thumbnail = 'https://image.walkerplus.com/lettuce/img/dish/1/S20140210031001A_000.png?x=450'
@@ -106,6 +112,8 @@ def main():
                             app.push_msgs(userID, '材料を準備いたします。')
                         else:
                             app.push_msgs(userID, '提案できる料理がありません')
+                    elif wait == 'cancel':
+                        app.push_msgs(userID, 'キャンセルしました。')
                     else:
                         app.push_msgs(userID, 'かしこまりました。')
                         app.push_msgs(userID, '材料を準備いたします。')
@@ -122,7 +130,8 @@ def main():
                     text = 'イカ - サーモン - いくら - はまち - 鯛 - まぐろ - キュウリ - カイワレ大根 - 大葉'
                     app.push_json(template(thumbnail, link, title, text))
 
-                    if response_wait() == 'no':
+                    wait = response_wait()
+                    if wait == 'no':
                         app.push_msgs(userID, '別の料理を提案します')
                         # ナッツサラダ
                         thumbnail = 'https://image.walkerplus.com/lettuce/img/dish/1/7013_0_0.jpg?x=450'
@@ -136,6 +145,8 @@ def main():
                             app.push_msgs(userID, '材料を準備いたします。')
                         else:
                             app.push_msgs(userID, '提案できる料理がありません')
+                    elif wait == 'cancel':
+                        app.push_msgs(userID, 'キャンセルしました。')
                     else:
                         app.push_msgs(userID, 'かしこまりました。')
                         app.push_msgs(userID, '材料を準備いたします。')
@@ -153,7 +164,8 @@ def main():
                     text = 'すっぽん様 - はくさい - 豆腐 - 長ネギ - がんもどき、お豆腐 - お好きな野菜 - 水 - 出し昆布 - 酒 - 醤油'
                     app.push_json(template(thumbnail, link, title, text))
 
-                    if response_wait() == 'no':
+                    wait = response_wait()
+                    if wait == 'no':
                         app.push_msgs(userID, '別の料理を提案します')
                         # ムニエル
                         thumbnail = 'https://img.cpcdn.com/recipes/5516497/m/d8bfff3490f57def01e4ed004f190e07.jpg?u=27736998&p=1550589458'
@@ -167,6 +179,8 @@ def main():
                             app.push_msgs(userID, '材料を準備いたします。')
                         else:
                             app.push_msgs(userID, '提案できる料理がありません')
+                    elif wait == 'cancel':
+                        app.push_msgs(userID, 'キャンセルしました。')
                     else:
                         app.push_msgs(userID, 'かしこまりました。')
                         app.push_msgs(userID, '材料を準備いたします。')
