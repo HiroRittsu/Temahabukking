@@ -18,6 +18,9 @@ from line_bot_api.models import (
 )
 
 msgs = []
+image = []
+audio = []
+stamp = []
 
 #################handler##########
 # get channel_secret and channel_access_token from your environment variable
@@ -63,12 +66,8 @@ def callback():
 
     # if event is MessageEvent and message is TextMessage, then echo text
     for event in events:
-        # if not isinstance(event, MessageEvent):
-        #    continue
-        # if not isinstance(event.message, TextMessage):
-        #    continue
-
-        msgs.append([id, event.message.text])
+        print(type(event))
+        print(type(event.message))
 
     return 'OK'
 

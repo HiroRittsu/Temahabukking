@@ -11,15 +11,6 @@ from lib.LineApp import line_bot_api
 sys.path.append(os.getcwd().replace('/src', ''))
 from lib import LineApp
 
-from linebot import (
-    LineBotApi, WebhookHandler, WebhookParser
-)
-from linebot.exceptions import (
-    InvalidSignatureError
-)
-from line_bot_api.models import (
-    MessageEvent, TextMessage, TextSendMessage, ImageSendMessage, ImageMessage,
-)
 app = LineApp.LineApp()
 
 userID = 'U444d8a9ca45523b6fcda0226769d9983'
