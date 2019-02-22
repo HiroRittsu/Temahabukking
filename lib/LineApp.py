@@ -4,6 +4,8 @@ import os
 import sys
 from argparse import ArgumentParser
 
+from io import BytesIO
+
 from flask import Flask, request, abort
 from linebot import (
     LineBotApi, WebhookHandler, WebhookParser
@@ -12,7 +14,7 @@ from linebot.exceptions import (
     InvalidSignatureError
 )
 from linebot.models import (
-    MessageEvent, TextMessage, TextSendMessage, ImageSendMessage,
+    MessageEvent, TextMessage, TextSendMessage, ImageSendMessage, ImageMessage,
 )
 
 msgs = []
@@ -34,6 +36,8 @@ handler = WebhookHandler('4ceb98627c0c99db6aa38531c54c3b02')
 parser = WebhookParser('4ceb98627c0c99db6aa38531c54c3b02')
 
 app = Flask(__name__)
+
+
 ###################################
 
 @app.route("/callback", methods=['POST'])
@@ -67,6 +71,16 @@ def callback():
         msgs.append([id, event.message.text])
 
     return 'OK'
+
+
+@handler.add(MessageEvent, message=ImageMessage)
+def handle_image(event):
+    message_id = event.message.id
+    message_content = line_bot_api.get_message_content(message_id)
+
+    image = BytesIO(message_content.content)
+
+    print(image)
 
 
 #####################################################

@@ -4,6 +4,7 @@ import random
 import sys
 import time
 import re
+from io import BytesIO
 
 sys.path.append(os.getcwd().replace('/src', ''))
 from lib import LineApp
