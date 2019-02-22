@@ -20,63 +20,33 @@ def post_text(user_id, text):
         "messages": [
             {
                 "type": "template",
-                "altText": "おすすめレストラン",
+                "altText": "This is a buttons template",
                 "template": {
-                    "type": "carousel",
-                    "columns": [
+                    "type": "buttons",
+                    "thumbnailImageUrl": "https://www.dinos.co.jp/kp/defaultMall/images/goods/D20/9154/etc/FD1734c1.jpg?Mode=main1s",
+                    "imageAspectRatio": "rectangle",
+                    "imageSize": "cover",
+                    "imageBackgroundColor": "#FFFFFF",
+                    "title": "レシピ",
+                    "text": "ご飯\n"
+                            "ケチャップ\n"
+                            "たまごぉ\n",
+                    "defaultAction": {
+                        "type": "uri",
+                        "label": "View detail",
+                        "uri": "https://www.dinos.co.jp/kp/defaultMall/images/goods/D20/9154/etc/FD1734c1.jpg?Mode=main1s"
+                    },
+                    "actions": [
                         {
-                            "thumbnailImageUrl": "https://s3-us-west-2.amazonaws.com/lineapitest/hamburger_240.jpeg",
-                            "title": "ジャンク・バーガー",
-                            "text": "誰が何と言おうとジャンクフードの王様は、今も昔も変わらずハンバーガー。",
-                            "actions": [
-
-                                {
-                                    "type": "uri",
-                                    "label": "詳細を見る",
-                                    "uri": "http://example.com/page/222"
-                                }
-                            ]
+                            "type": "postback",
+                            "label": "注文します",
+                            "data": "action=buy&itemid=123"
                         },
                         {
-                            "thumbnailImageUrl": "https://s3-us-west-2.amazonaws.com/lineapitest/pizza_240.jpeg",
-                            "title": "pizza cap",
-                            "text": "本場ナポリの味を早く、安く。都内に17店舗展開するピザ専門店です。",
-                            "actions": [
-
-                                {
-                                    "type": "uri",
-                                    "label": "詳細を見る",
-                                    "uri": "http://example.com/page/222"
-                                }
-                            ]
-                        },
-                        {
-                            "thumbnailImageUrl": "https://s3-us-west-2.amazonaws.com/lineapitest/bread_240.jpeg",
-                            "title": "本格パン工房 たけよし",
-                            "text": "パンにとって一番大事だと思うものはなんですか？たけよしは、表面の焼き上がりこそが命であると考えています。",
-                            "actions": [
-
-                                {
-                                    "type": "uri",
-                                    "label": "詳細を見る",
-                                    "uri": "http://example.com/page/222"
-                                }
-                            ]
-                        },
-                        {
-                            "thumbnailImageUrl": "https://s3-us-west-2.amazonaws.com/lineapitest/harumaki_240.jpeg",
-                            "title": "ヴェトナムTokyo",
-                            "text": "東池袋にあるしたベトナム料理の老舗。40年以上人々に愛され続けてきたベトナム料理をご提供します。",
-                            "actions": [
-
-                                {
-                                    "type": "uri",
-                                    "label": "詳細を見る",
-                                    "uri": "http://example.com/page/222"
-                                }
-                            ]
-                        },
-
+                            "type": "postback",
+                            "label": "注文しません",
+                            "data": "action=add&itemid=123"
+                        }
                     ]
                 }
             }
