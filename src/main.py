@@ -102,7 +102,7 @@ def main():
                         app.push_msgs(userID, '別の料理を提案します')
                         # 牡蠣カレー
                         thumbnail = 'https://image.walkerplus.com/lettuce/img/dish/1/S20140210031001A_000.png?x=450'
-                        link = 'https://sites.google.com/view/migly-sample/%E3%83%9B%E3%83%BC%E3%83%A0'
+                        link = 'https://sites.google.com/view/temahabokking0005/%E3%83%9B%E3%83%BC%E3%83%A0'
                         title = '牡蠣カレー　840円'
                         text = '牡蠣 - 酒 - 玉ねぎ - にんじん - バター - にんにく - しょうが'
                         app.push_json(template(thumbnail, link, title, text))
