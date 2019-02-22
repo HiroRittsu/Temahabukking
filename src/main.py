@@ -80,10 +80,21 @@ def main():
                 # case1
                 if game_flag == True:
                     # カツ丼
-                    thumbnail = 'https://t4.ftcdn.net/jpg/01/46/63/19/240_F_146631973_bHTvB7Djehzsz1DW6U1TK4Rl3ZQLTA0v.jpg'
+                    thumbnail = 'https://image.walkerplus.com/lettuce/img/dish/1/S20140210031001A_000.png?x=450'
                     link = 'https://sites.google.com/view/migly-sample/%E3%83%9B%E3%83%BC%E3%83%A0'
                     text = '牡蠣 - 酒 - 玉ねぎ - にんじん - バター - にんにく - しょうが'
                     app.push_json(template(thumbnail, link, text))
+                    game_flag = False
+
+                # case2
+                if sorry_flag == True and angry_flag == True:
+                    # 手巻き寿司
+                    thumbnail = 'https://image.walkerplus.com/lettuce/img/dish/1/S20140210031001A_000.png?x=450'
+                    link = 'https://sites.google.com/view/migly-sample/%E3%83%9B%E3%83%BC%E3%83%A0'
+                    text = 'イカ - サーモン - いくら - はまち - 鯛 - まぐろ - キュウリ - カイワレ大根 - 大葉'
+                    app.push_json(template(thumbnail, link, text))
+                    sorry_flag = False
+                    angry_flag = False
 
             if '試合' in msg:
                 game_flag = True
