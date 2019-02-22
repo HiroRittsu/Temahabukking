@@ -65,9 +65,9 @@ def template(thumbnail, link, title, text):
 
 def response_wait():
     while True:
-        print("debug")
         if not len(app.get_postback()) == 0:
             return app.get_postback().pop(0)
+        time.sleep(0.1)
 
 
 def main():
@@ -104,12 +104,20 @@ def main():
                     app.push_json(template(thumbnail, link, title, text))
 
                     if response_wait() == 'no':
+                        app.push_msgs(userID, '別の料理を提案します')
                         # ムニエル
                         thumbnail = 'https://img.cpcdn.com/recipes/5516497/m/d8bfff3490f57def01e4ed004f190e07.jpg?u=27736998&p=1550589458'
                         link = 'https://sites.google.com/view/migly-sample/%E3%83%9B%E3%83%BC%E3%83%A0'
-                        title = '鯛のムニエル　野菜＆ナッツのバターソース'
+                        title = '鯛のムニエル'
                         text = '鯛 - 塩・コショウ - 薄力粉 - セロリ茎 - トマト - 玉ねぎ - カシューナッツ - 乾燥スライスニンニク - パセリ(みじん切り) - バター - オリーブ油'
                         app.push_json(template(thumbnail, link, title, text))
+
+                        if response_wait() == 'yes':
+                            app.push_msgs(userID, '材料を準備します')
+                        else:
+                            app.push_msgs(userID, '提案できる料理がありません')
+                    else:
+                        app.push_msgs(userID, '材料を準備します')
 
                     sorry_flag = False
                     angry_flag = False
