@@ -22,6 +22,7 @@ msgs = []
 image = []
 audio = []
 sticker = []
+button_list = []
 
 #################handler##########
 # get channel_secret and channel_access_token from your environment variable
@@ -67,7 +68,9 @@ def callback():
         id = json.loads(body)["events"][0]["source"]["groupId"]
 
     for event in events:
-        print(type(events))
+        if str(event) == '<class \'list\'>':
+            button_list = event
+            print(button_list)
         if not isinstance(event, MessageEvent):
             continue
         if isinstance(event.message, TextMessage):
@@ -80,16 +83,6 @@ def callback():
             audio.append([id, event.message.id])
 
     return 'OK'
-
-
-# ボタンの入力を受け取るPostbackEvent
-@handler.add(PostbackEvent)
-def on_postback(event):
-    reply_token = event.reply_token
-    user_id = event.source.user_id
-    postback_msg = event.postback.data
-
-    print(postback_msg)
 
 
 #####################################################
