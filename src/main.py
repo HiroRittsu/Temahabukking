@@ -83,6 +83,8 @@ def main():
     work_flag = False
     tired_flag = False
 
+    app.push_msgs(userID, 'bot起動')
+
     while True:
         if not len(app.get_msgs()) == 0:
             msg = app.get_msgs().pop(0)[1]
