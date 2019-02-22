@@ -46,6 +46,7 @@ app = Flask(__name__)
 
 @app.route("/callback", methods=['POST'])
 def callback():
+    print("debug")
     id = 0
     signature = request.headers['X-Line-Signature']
 
