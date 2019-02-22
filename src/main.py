@@ -6,8 +6,6 @@ import time
 import re
 from io import BytesIO
 
-from lib.LineApp import line_bot_api
-
 sys.path.append(os.getcwd().replace('/src', ''))
 from lib import LineApp
 
