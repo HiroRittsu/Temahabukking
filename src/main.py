@@ -11,8 +11,8 @@ from lib import LineApp
 
 app = LineApp.LineApp()
 
-# userID = 'U444d8a9ca45523b6fcda0226769d9983'
-userID = 'Ce768ea847f6963afa3f73a7d63d8e080'
+userID = 'U444d8a9ca45523b6fcda0226769d9983'
+# userID = 'Ce768ea847f6963afa3f73a7d63d8e080'
 
 history_msgs = []
 
@@ -164,6 +164,7 @@ def main():
                         app.push_json(select_template())
                         # 待機
                         wait = message_wait()
+                        print(wait)
                         if wait == '店舗':
                             app.push_msgs(userID, 'かしこまりました。')
                             app.push_msgs(userID, '材料を準備いたします。')
@@ -197,6 +198,7 @@ def main():
                             app.push_json(select_template())
                             # 待機
                             wait = message_wait()
+                            print(wait)
                             if wait == '店舗':
                                 app.push_msgs(userID, 'かしこまりました。')
                                 app.push_msgs(userID, '材料を準備いたします。')
@@ -245,6 +247,7 @@ def main():
                             app.push_json(select_template())
                             # 待機
                             wait = message_wait()
+                            print(wait)
                             if wait == '店舗':
                                 app.push_msgs(userID, 'かしこまりました。')
                                 app.push_msgs(userID, '材料を準備いたします。')
