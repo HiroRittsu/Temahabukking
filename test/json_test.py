@@ -17,32 +17,67 @@ def post_text(user_id, text):
     }
     data = {
         'to': user_id,
-        'messages': [
+        "messages": [
             {
                 "type": "template",
-                "altText": "this is a buttons template",
+                "altText": "おすすめレストラン",
                 "template": {
-                    "type": "buttons",
-                    "actions": [
+                    "type": "carousel",
+                    "columns": [
                         {
-                            "type": "message",
-                            "label": "アクション 1",
-                            "text": "アクション 1"
+                            "thumbnailImageUrl": "https://s3-us-west-2.amazonaws.com/lineapitest/hamburger_240.jpeg",
+                            "title": "ジャンク・バーガー",
+                            "text": "誰が何と言おうとジャンクフードの王様は、今も昔も変わらずハンバーガー。",
+                            "actions": [
+
+                                {
+                                    "type": "uri",
+                                    "label": "詳細を見る",
+                                    "uri": "http://example.com/page/222"
+                                }
+                            ]
                         },
                         {
-                            "type": "message",
-                            "label": "アクション 2",
-                            "text": "アクション 2"
+                            "thumbnailImageUrl": "https://s3-us-west-2.amazonaws.com/lineapitest/pizza_240.jpeg",
+                            "title": "pizza cap",
+                            "text": "本場ナポリの味を早く、安く。都内に17店舗展開するピザ専門店です。",
+                            "actions": [
+
+                                {
+                                    "type": "uri",
+                                    "label": "詳細を見る",
+                                    "uri": "http://example.com/page/222"
+                                }
+                            ]
                         },
                         {
-                            "type": "message",
-                            "label": "アクション 3",
-                            "text": "アクション 3"
-                        }
-                    ],
-                    "thumbnailImageUrl": "SPECIFY_YOUR_IMAGE_URL",
-                    "title": "タイトルです",
-                    "text": "テキストです"
+                            "thumbnailImageUrl": "https://s3-us-west-2.amazonaws.com/lineapitest/bread_240.jpeg",
+                            "title": "本格パン工房 たけよし",
+                            "text": "パンにとって一番大事だと思うものはなんですか？たけよしは、表面の焼き上がりこそが命であると考えています。",
+                            "actions": [
+
+                                {
+                                    "type": "uri",
+                                    "label": "詳細を見る",
+                                    "uri": "http://example.com/page/222"
+                                }
+                            ]
+                        },
+                        {
+                            "thumbnailImageUrl": "https://s3-us-west-2.amazonaws.com/lineapitest/harumaki_240.jpeg",
+                            "title": "ヴェトナムTokyo",
+                            "text": "東池袋にあるしたベトナム料理の老舗。40年以上人々に愛され続けてきたベトナム料理をご提供します。",
+                            "actions": [
+
+                                {
+                                    "type": "uri",
+                                    "label": "詳細を見る",
+                                    "uri": "http://example.com/page/222"
+                                }
+                            ]
+                        },
+
+                    ]
                 }
             }
         ]
