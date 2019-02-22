@@ -78,7 +78,7 @@ def main():
                     # カツ丼
                     thumbnail = 'https://t4.ftcdn.net/jpg/01/46/63/19/240_F_146631973_bHTvB7Djehzsz1DW6U1TK4Rl3ZQLTA0v.jpg'
                     link = 'https://sites.google.com/view/migly-sample/%E3%83%9B%E3%83%BC%E3%83%A0'
-                    text = "ご飯\nケチャップ\nたまごぉ\n"
+                    text = '牡蠣：10 個（200 g）\n酒：大さじ 2'
                     app.push_json(template(thumbnail, link, text))
 
             if '試合' in msg:
