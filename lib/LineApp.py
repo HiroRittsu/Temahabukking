@@ -70,6 +70,7 @@ def callback():
     for event in events:
         if isinstance(event, PostbackEvent):
             postback.append(event.postback.data)
+            print(event.postback.data)
         if not isinstance(event, MessageEvent):
             continue
         if isinstance(event.message, TextMessage):

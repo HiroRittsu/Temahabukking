@@ -65,6 +65,7 @@ def template(thumbnail, link, title, text):
 
 def response_wait():
     while True:
+        print("debug")
         if not len(app.get_postback()) == 0:
             return app.get_postback().pop(0)
 
