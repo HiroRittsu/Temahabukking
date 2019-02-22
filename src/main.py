@@ -122,7 +122,7 @@ def main():
                     game_flag = False
 
                 # case2
-                if sorry_flag == True and angry_flag == True:
+                if sorry_flag == True or angry_flag == True:
                     app.push_msgs(userID, 'ピッタリの料理をご提案します')
                     # 手巻き寿司
                     thumbnail = 'https://park.ajinomoto.co.jp/wp-content/uploads/2018/03/705987.jpeg'
@@ -156,7 +156,7 @@ def main():
                     angry_flag = False
 
                 # case3
-                if work_flag == True and tired_flag == True:
+                if work_flag == True or tired_flag == True:
                     app.push_msgs(userID, 'ピッタリの料理をご提案します')
                     # すっぽん鍋
                     thumbnail = 'https://imgfp.hotp.jp/IMGH/10/40/P022821040/P022821040_238.jpg'
