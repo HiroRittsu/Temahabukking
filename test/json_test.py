@@ -24,7 +24,7 @@ def post_text(reply_token, text):
             }
         ]
     }
-    requests.post(REPLY_ENDPOINT, headers=header, data=json.dumps(payload))
+    print(requests.post(REPLY_ENDPOINT, headers=header, data=json.dumps(payload)))
 
 
 post_text(user_id, 'debug')
