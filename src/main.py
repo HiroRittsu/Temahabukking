@@ -124,36 +124,36 @@ def main():
                     sorry_flag = False
                     angry_flag = False
 
-                    # case3
-                    if work_flag == True and tired_flag == True:
-                        app.push_msgs(userID, 'ピッタリの料理をご提案します')
-                        # 手巻き寿司
-                        thumbnail = 'https://park.ajinomoto.co.jp/wp-content/uploads/2018/03/705987.jpeg'
-                        link = 'https://sites.google.com/view/migly-sample/%E3%83%9B%E3%83%BC%E3%83%A0'
-                        title = '手巻き寿司'
-                        text = 'イカ - サーモン - いくら - はまち - 鯛 - まぐろ - キュウリ - カイワレ大根 - 大葉'
+                # case3
+                if work_flag == True and tired_flag == True:
+                    app.push_msgs(userID, 'ピッタリの料理をご提案します')
+                    # 手巻き寿司
+                    thumbnail = 'https://park.ajinomoto.co.jp/wp-content/uploads/2018/03/705987.jpeg'
+                    link = 'https://sites.google.com/view/migly-sample/%E3%83%9B%E3%83%BC%E3%83%A0'
+                    title = '手巻き寿司'
+                    text = 'イカ - サーモン - いくら - はまち - 鯛 - まぐろ - キュウリ - カイワレ大根 - 大葉'
+                    app.push_json(template(thumbnail, link, title, text))
+
+                    if response_wait() == 'no':
+                        app.push_msgs(userID, '別の料理を提案します')
+                        # ムニエル
+                        thumbnail = 'https://img.cpcdn.com/recipes/5516497/m/d8bfff3490f57def01e4ed004f190e07.jpg?u=27736998&p=1550589458'
+                        link = 'https://sites.google.com/view/temahabokking0001/%E3%83%9B%E3%83%BC%E3%83%A0'
+                        title = '鯛のムニエル'
+                        text = '鯛 - 塩・コショウ - 薄力粉 - セロリ茎 - トマト - 玉ねぎ - カシューナッツ - 乾燥スライスニンニク - パセリ(みじん切り) - バター - オリーブ油'
                         app.push_json(template(thumbnail, link, title, text))
 
-                        if response_wait() == 'no':
-                            app.push_msgs(userID, '別の料理を提案します')
-                            # ムニエル
-                            thumbnail = 'https://img.cpcdn.com/recipes/5516497/m/d8bfff3490f57def01e4ed004f190e07.jpg?u=27736998&p=1550589458'
-                            link = 'https://sites.google.com/view/temahabokking0001/%E3%83%9B%E3%83%BC%E3%83%A0'
-                            title = '鯛のムニエル'
-                            text = '鯛 - 塩・コショウ - 薄力粉 - セロリ茎 - トマト - 玉ねぎ - カシューナッツ - 乾燥スライスニンニク - パセリ(みじん切り) - バター - オリーブ油'
-                            app.push_json(template(thumbnail, link, title, text))
-
-                            if response_wait() == 'yes':
-                                app.push_msgs(userID, 'かしこまりました。')
-                                app.push_msgs(userID, '材料を準備いたします。')
-                            else:
-                                app.push_msgs(userID, '提案できる料理がありません')
-                        else:
+                        if response_wait() == 'yes':
                             app.push_msgs(userID, 'かしこまりました。')
                             app.push_msgs(userID, '材料を準備いたします。')
+                        else:
+                            app.push_msgs(userID, '提案できる料理がありません')
+                    else:
+                        app.push_msgs(userID, 'かしこまりました。')
+                        app.push_msgs(userID, '材料を準備いたします。')
 
-                        sorry_flag = False
-                        angry_flag = False
+                    sorry_flag = False
+                    angry_flag = False
 
             if '試合' in msg:
                 game_flag = True
