@@ -64,7 +64,6 @@ def callback():
     if 'groupId' in body:
         id = json.loads(body)["events"][0]["source"]["groupId"]
 
-    # if event is MessageEvent and message is TextMessage, then echo text
     for event in events:
         if not isinstance(event, MessageEvent):
             continue
@@ -78,16 +77,6 @@ def callback():
             audio.append([id, event.message.id])
 
     return 'OK'
-
-
-@handler.add(MessageEvent, message=ImageMessage)
-def handle_image(event):
-    print("handle_image:", event)
-
-    message_id = event.message.id
-    message_content = line_bot_api.get_message_content(message_id)
-
-    image = BytesIO(message_content.content)
 
 
 #####################################################
