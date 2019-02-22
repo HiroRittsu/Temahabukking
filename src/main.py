@@ -82,10 +82,9 @@ def main():
             msg = app.get_msgs().pop(0)[1]
             history_msgs.append(msg)
             if '今日のご飯' in msg:
-                app.push_msgs(userID, 'ご飯を提案します')
-
                 # case1
                 if game_flag == True:
+                    app.push_msgs(userID, 'ピッタリの料理をご提案します')
                     # カツ丼
                     thumbnail = 'https://image.walkerplus.com/lettuce/img/dish/1/S20140210031001A_000.png?x=450'
                     link = 'https://sites.google.com/view/migly-sample/%E3%83%9B%E3%83%BC%E3%83%A0'
@@ -96,6 +95,7 @@ def main():
 
                 # case2
                 if sorry_flag == True and angry_flag == True:
+                    app.push_msgs(userID, 'ピッタリの料理をご提案します')
                     # 手巻き寿司
                     thumbnail = 'https://park.ajinomoto.co.jp/wp-content/uploads/2018/03/705987.jpeg'
                     link = 'https://sites.google.com/view/migly-sample/%E3%83%9B%E3%83%BC%E3%83%A0'
@@ -105,22 +105,55 @@ def main():
 
                     if response_wait() == 'no':
                         app.push_msgs(userID, '別の料理を提案します')
-                        # ムニエル
-                        thumbnail = 'https://img.cpcdn.com/recipes/5516497/m/d8bfff3490f57def01e4ed004f190e07.jpg?u=27736998&p=1550589458'
+                        # ナッツサラダ
+                        thumbnail = 'https://image.walkerplus.com/lettuce/img/dish/1/7013_0_0.jpg?x=450'
                         link = 'https://sites.google.com/view/migly-sample/%E3%83%9B%E3%83%BC%E3%83%A0'
-                        title = '鯛のムニエル'
-                        text = '鯛 - 塩・コショウ - 薄力粉 - セロリ茎 - トマト - 玉ねぎ - カシューナッツ - 乾燥スライスニンニク - パセリ(みじん切り) - バター - オリーブ油'
+                        title = 'ナッツサラダ'
+                        text = '牛ももステーキ用肉 - 塩 - ・粗びき黒こしょう - 春菊 - 紫玉ねぎ - ミックスナッツ'
                         app.push_json(template(thumbnail, link, title, text))
 
                         if response_wait() == 'yes':
-                            app.push_msgs(userID, '材料を準備します')
+                            app.push_msgs(userID, 'かしこまりました。')
+                            app.push_msgs(userID, '材料を準備いたします。')
                         else:
                             app.push_msgs(userID, '提案できる料理がありません')
                     else:
-                        app.push_msgs(userID, '材料を準備します')
+                        app.push_msgs(userID, 'かしこまりました。')
+                        app.push_msgs(userID, '材料を準備いたします。')
 
                     sorry_flag = False
                     angry_flag = False
+
+                    # case3
+                    if work_flag == True and tired_flag == True:
+                        app.push_msgs(userID, 'ピッタリの料理をご提案します')
+                        # 手巻き寿司
+                        thumbnail = 'https://park.ajinomoto.co.jp/wp-content/uploads/2018/03/705987.jpeg'
+                        link = 'https://sites.google.com/view/migly-sample/%E3%83%9B%E3%83%BC%E3%83%A0'
+                        title = '手巻き寿司'
+                        text = 'イカ - サーモン - いくら - はまち - 鯛 - まぐろ - キュウリ - カイワレ大根 - 大葉'
+                        app.push_json(template(thumbnail, link, title, text))
+
+                        if response_wait() == 'no':
+                            app.push_msgs(userID, '別の料理を提案します')
+                            # ムニエル
+                            thumbnail = 'https://img.cpcdn.com/recipes/5516497/m/d8bfff3490f57def01e4ed004f190e07.jpg?u=27736998&p=1550589458'
+                            link = 'https://sites.google.com/view/temahabokking0001/%E3%83%9B%E3%83%BC%E3%83%A0'
+                            title = '鯛のムニエル'
+                            text = '鯛 - 塩・コショウ - 薄力粉 - セロリ茎 - トマト - 玉ねぎ - カシューナッツ - 乾燥スライスニンニク - パセリ(みじん切り) - バター - オリーブ油'
+                            app.push_json(template(thumbnail, link, title, text))
+
+                            if response_wait() == 'yes':
+                                app.push_msgs(userID, 'かしこまりました。')
+                                app.push_msgs(userID, '材料を準備いたします。')
+                            else:
+                                app.push_msgs(userID, '提案できる料理がありません')
+                        else:
+                            app.push_msgs(userID, 'かしこまりました。')
+                            app.push_msgs(userID, '材料を準備いたします。')
+
+                        sorry_flag = False
+                        angry_flag = False
 
             if '試合' in msg:
                 game_flag = True
