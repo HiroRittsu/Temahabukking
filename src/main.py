@@ -46,12 +46,12 @@ def template(thumbnail, link, text):
                         {
                             "type": "postback",
                             "label": "注文します",
-                            "data": "action=buy&itemid=123"
+                            "data": "yes"
                         },
                         {
                             "type": "postback",
                             "label": "注文しません",
-                            "data": "action=add&itemid=123"
+                            "data": "no"
                         }
                     ]
                 }
