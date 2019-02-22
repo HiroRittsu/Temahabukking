@@ -81,15 +81,15 @@ def main():
                     text = '牡蠣：10 個（200 g）\n酒：大さじ 2\n玉ねぎ：1/2 個（100 g）\nにんじん：1/3 本（60 g）\nバター：20 g\nにんにく・しょうが（すりおろし）：各小さじ 1'
                     app.push_json(template(thumbnail, link, text))
 
-            if msg == '試合':
+            if '試合' in msg:
                 game_flag = True
-            if msg == 'ごめん':
+            if 'ごめん' in msg:
                 sorry_flag = True
-            if msg == '怒':
+            if '怒' in msg:
                 angry_flag = True
-            if msg == '仕事':
+            if '仕事' in msg:
                 work_flag = True
-            if msg == '疲れ':
+            if '疲れ' in msg:
                 tired_flag = True
         time.sleep(0.1)
 
