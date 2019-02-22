@@ -20,11 +20,6 @@ def main():
             event = app.get_msgs().pop(0)[1]
 
             print("handle_image:", event)
-
-            message_id = event.message.id
-            message_content = line_bot_api.get_message_content(message_id)
-
-            image = BytesIO(message_content.content)
         # if not len(app.get_msgs()) == 0:
         #    app.push_msgs(userID, app.get_msgs().pop(0)[1])
         time.sleep(1)
