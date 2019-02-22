@@ -29,27 +29,29 @@ def template(thumbnail, link, text):
                 "altText": "This is a buttons template",
                 "template": {
                     "type": "buttons",
-                    "thumbnailImageUrl": thumbnail,
+                    "thumbnailImageUrl": "https://www.dinos.co.jp/kp/defaultMall/images/goods/D20/9154/etc/FD1734c1.jpg?Mode=main1s",
                     "imageAspectRatio": "rectangle",
                     "imageSize": "cover",
                     "imageBackgroundColor": "#FFFFFF",
                     "title": "レシピ",
-                    "text": text,
+                    "text": "ご飯\n"
+                            "ケチャップ\n"
+                            "たまごぉ\n",
                     "defaultAction": {
                         "type": "uri",
                         "label": "View detail",
-                        "uri": link
+                        "uri": "https://sites.google.com/view/migly-sample/%E3%83%9B%E3%83%BC%E3%83%A0"
                     },
                     "actions": [
                         {
                             "type": "postback",
                             "label": "注文します",
-                            "data": "yes"
+                            "data": "action=buy&itemid=123"
                         },
                         {
                             "type": "postback",
                             "label": "注文しません",
-                            "data": "no"
+                            "data": "action=add&itemid=123"
                         }
                     ]
                 }
