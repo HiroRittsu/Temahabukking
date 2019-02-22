@@ -7,24 +7,24 @@ url = 'https://api.line.me/v2/bot/message/push'
 channel_access_token = '/07Z+OlPxitHyS23cLdU+jdE7XOhZJ8ABueC4ctVy/chTD3sxn3qUTRN66UoUH/weuD3MkL7twkVGs9Ik3tjAcD+NHBXU7t9HcRi+ebCcwuJq+RAG77Ad3P7WplaOgCx8qovCfUON3LiV5OZndRLtgdB04t89/1O/w1cDnyilFU='
 user_id = 'U444d8a9ca45523b6fcda0226769d9983'
 
-REPLY_ENDPOINT = 'https://api.line.me/v2/bot/message/reply'
+REPLY_ENDPOINT = 'https://api.line.me/v2/bot/message/push'
 
 
-def post_text(reply_token, text):
+def post_text(user_id, text):
     header = {
         "Content-Type": "application/json",
         "Authorization": "Bearer {" + channel_access_token + "}"
     }
-    payload = {
-        "replyToken": reply_token,
-        "messages": [
+    data = {
+        'to': user_id,
+        'messages': [
             {
-                "type": "text",
-                "text": text
+                'type': 'text',
+                'text': text
             }
         ]
     }
-    print(requests.post(REPLY_ENDPOINT, headers=header, data=json.dumps(payload)))
+    print(requests.post(REPLY_ENDPOINT, headers=header, data=json.dumps(data)))
 
 
 post_text(user_id, 'debug')
