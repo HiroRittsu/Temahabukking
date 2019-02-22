@@ -34,13 +34,13 @@ def select_template():
                     "actions": [
                         {
                             "type": "message",
-                            "label": "Store",
-                            "text": "store"
+                            "label": "店舗で",
+                            "text": "店舗"
                         },
                         {
                             "type": "message",
-                            "label": "Home",
-                            "text": "home"
+                            "label": "自宅で",
+                            "text": "自宅"
                         }
                     ]
                 }
@@ -108,7 +108,7 @@ def response_wait():
 def message_wait():
     while True:
         if not len(app.get_msgs()) == 0:
-            return app.get_msgs().pop(0)
+            return app.get_msgs().pop(0)[1]
         time.sleep(0.1)
 
 
@@ -151,7 +151,7 @@ def main():
                             # 待機
                             wait = message_wait()
                             print(wait)
-                            if wait == 'store':
+                            if wait == '店舗':
                                 app.push_msgs(userID, 'かしこまりました。')
                                 app.push_msgs(userID, '材料を準備いたします。')
                             else:
@@ -166,7 +166,7 @@ def main():
                         # 待機
                         wait = message_wait()
                         print(wait)
-                        if wait == 'store':
+                        if wait == '店舗':
                             app.push_msgs(userID, 'かしこまりました。')
                             app.push_msgs(userID, '材料を準備いたします。')
                         else:
@@ -200,7 +200,7 @@ def main():
                             # 待機
                             wait = message_wait()
                             print(wait)
-                            if wait == 'store':
+                            if wait == '店舗':
                                 app.push_msgs(userID, 'かしこまりました。')
                                 app.push_msgs(userID, '材料を準備いたします。')
                             else:
@@ -215,7 +215,7 @@ def main():
                         # 待機
                         wait = message_wait()
                         print(wait)
-                        if wait == 'store':
+                        if wait == '店舗':
                             app.push_msgs(userID, 'かしこまりました。')
                             app.push_msgs(userID, '材料を準備いたします。')
                         else:
@@ -250,7 +250,7 @@ def main():
                             # 待機
                             wait = message_wait()
                             print(wait)
-                            if wait == 'store':
+                            if wait == '店舗':
                                 app.push_msgs(userID, 'かしこまりました。')
                                 app.push_msgs(userID, '材料を準備いたします。')
                             else:
@@ -265,7 +265,7 @@ def main():
                         # 待機
                         wait = message_wait()
                         print(wait)
-                        if wait == 'store':
+                        if wait == '店舗':
                             app.push_msgs(userID, 'かしこまりました。')
                             app.push_msgs(userID, '材料を準備いたします。')
                         else:
