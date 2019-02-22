@@ -88,7 +88,7 @@ def main():
                     # カツカレー
                     thumbnail = 'https://img.cpcdn.com/recipes/4939420/m/49983e0dd58f3dc9ee5438c29c7d40be.jpg?u=20307638&p=1518680840'
                     link = 'https://sites.google.com/view/temahabokking0003/%E3%83%9B%E3%83%BC%E3%83%A0'
-                    title = 'カツカレー'
+                    title = 'カツカレー 628円'
                     text = 'とんかつ（チキンでも可） - じゃがいも - 人参 - 玉ねぎ - 福神漬け - オリーブオイル（食材炒め用） - バーモントカレー中辛 - こくまろ甘口 - ゴールデンカレー甘口 - S&Bカレーパウダー - 塩・胡椒 - 醤油 - オイスターソース - かつおダシ'
                     app.push_json(template(thumbnail, link, title, text))
 
@@ -97,7 +97,7 @@ def main():
                         # 牡蠣カレー
                         thumbnail = 'https://image.walkerplus.com/lettuce/img/dish/1/S20140210031001A_000.png?x=450'
                         link = 'https://sites.google.com/view/migly-sample/%E3%83%9B%E3%83%BC%E3%83%A0'
-                        title = '牡蠣カレー'
+                        title = '牡蠣カレー 840円'
                         text = '牡蠣 - 酒 - 玉ねぎ - にんじん - バター - にんにく - しょうが'
                         app.push_json(template(thumbnail, link, title, text))
 
@@ -118,7 +118,7 @@ def main():
                     # 手巻き寿司
                     thumbnail = 'https://park.ajinomoto.co.jp/wp-content/uploads/2018/03/705987.jpeg'
                     link = 'https://sites.google.com/view/temahabokking0002/%E3%83%9B%E3%83%BC%E3%83%A0'
-                    title = '手巻き寿司'
+                    title = '手巻き寿司 1,740'
                     text = 'イカ - サーモン - いくら - はまち - 鯛 - まぐろ - キュウリ - カイワレ大根 - 大葉'
                     app.push_json(template(thumbnail, link, title, text))
 
@@ -127,7 +127,7 @@ def main():
                         # ナッツサラダ
                         thumbnail = 'https://image.walkerplus.com/lettuce/img/dish/1/7013_0_0.jpg?x=450'
                         link = 'https://sites.google.com/view/migly-sample/%E3%83%9B%E3%83%BC%E3%83%A0'
-                        title = 'ナッツサラダ'
+                        title = 'ナッツサラダ 802円'
                         text = '牛ももステーキ用肉 - 塩 - ・粗びき黒こしょう - 春菊 - 紫玉ねぎ - ミックスナッツ'
                         app.push_json(template(thumbnail, link, title, text))
 
@@ -149,7 +149,7 @@ def main():
                     # すっぽん鍋
                     thumbnail = 'https://imgfp.hotp.jp/IMGH/10/40/P022821040/P022821040_238.jpg'
                     link = 'https://sites.google.com/view/temahabokking0002/%E3%83%9B%E3%83%BC%E3%83%A0'
-                    title = 'すっぽん鍋'
+                    title = 'すっぽん鍋 2,460円'
                     text = 'すっぽん様 - はくさい - 豆腐 - 長ネギ - がんもどき、お豆腐 - お好きな野菜 - 水 - 出し昆布 - 酒 - 醤油'
                     app.push_json(template(thumbnail, link, title, text))
 
@@ -158,7 +158,7 @@ def main():
                         # ムニエル
                         thumbnail = 'https://img.cpcdn.com/recipes/5516497/m/d8bfff3490f57def01e4ed004f190e07.jpg?u=27736998&p=1550589458'
                         link = 'https://sites.google.com/view/temahabokking0001/%E3%83%9B%E3%83%BC%E3%83%A0'
-                        title = '鯛のムニエル'
+                        title = '鯛のムニエル 1,280円'
                         text = '鯛 - 塩・コショウ - 薄力粉 - セロリ茎 - トマト - 玉ねぎ - カシューナッツ - 乾燥スライスニンニク - パセリ(みじん切り) - バター - オリーブ油'
                         app.push_json(template(thumbnail, link, title, text))
 
