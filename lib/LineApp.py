@@ -47,7 +47,6 @@ app = Flask(__name__)
 
 @app.route("/callback", methods=['POST'])
 def callback():
-    print("debug")
     id = 0
     signature = request.headers['X-Line-Signature']
 
@@ -68,7 +67,7 @@ def callback():
         id = json.loads(body)["events"][0]["source"]["groupId"]
 
     for event in events:
-        if not isinstance(event, PostbackEvent):
+        if isinstance(event, PostbackEvent):
             print("POST")
             print(event.postback.data)
         if not isinstance(event, MessageEvent):
