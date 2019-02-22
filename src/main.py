@@ -34,9 +34,7 @@ def template(thumbnail, link, text):
                     "imageSize": "cover",
                     "imageBackgroundColor": "#FFFFFF",
                     "title": "レシピ",
-                    "text": "ご飯\n"
-                            "ケチャップ\n"
-                            "たまごぉ\n",
+                    "text": text,
                     "defaultAction": {
                         "type": "uri",
                         "label": "View detail",

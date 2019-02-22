@@ -28,7 +28,9 @@ def post_text(user_id, text):
                     "imageSize": "cover",
                     "imageBackgroundColor": "#FFFFFF",
                     "title": "レシピ",
-                    "text": text,
+                    "text": "ご飯\n"
+                            "ケチャップ\n"
+                            "たまごぉ\n",
                     "defaultAction": {
                         "type": "uri",
                         "label": "View detail",
