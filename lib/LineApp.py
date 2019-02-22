@@ -69,9 +69,8 @@ def callback():
 
     for event in events:
         print(type(event))
-        if str(type(event)) == '<class \'list\'>':
-            button_list = event
-            print(button_list)
+        if not isinstance(event, PostbackEvent):
+            print(event)
         if not isinstance(event, MessageEvent):
             continue
         if isinstance(event.message, TextMessage):
