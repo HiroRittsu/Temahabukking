@@ -80,7 +80,7 @@ def main():
                 # case1
                 if game_flag == True:
                     # カツ丼
-                    thumbnail = 'http://www.hs-gyoren.jp/shop/img/curry/02.jpg'
+                    thumbnail = 'https://t4.ftcdn.net/jpg/01/46/63/19/240_F_146631973_bHTvB7Djehzsz1DW6U1TK4Rl3ZQLTA0v.jpg'
                     link = 'https://sites.google.com/view/migly-sample/%E3%83%9B%E3%83%BC%E3%83%A0'
                     text = '牡蠣 - 酒 - 玉ねぎ - にんじん - バター - にんにく - しょうが'
                     app.push_json(template(thumbnail, link, text))
