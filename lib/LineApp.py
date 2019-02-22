@@ -66,6 +66,7 @@ def callback():
 
     if 'groupId' in body:
         id = json.loads(body)["events"][0]["source"]["groupId"]
+        print(id)
 
     for event in events:
         if isinstance(event, PostbackEvent):

@@ -135,7 +135,7 @@ def main():
                         app.push_msgs(userID, '別の料理を提案します')
                         # ナッツサラダ
                         thumbnail = 'https://image.walkerplus.com/lettuce/img/dish/1/7013_0_0.jpg?x=450'
-                        link = 'https://sites.google.com/view/migly-sample/%E3%83%9B%E3%83%BC%E3%83%A0'
+                        link = 'https://sites.google.com/view/temahabokking0006/%E3%83%9B%E3%83%BC%E3%83%A0'
                         title = 'ナッツサラダ　802円'
                         text = '牛ももステーキ用肉 - 塩 - ・粗びき黒こしょう - 春菊 - 紫玉ねぎ - ミックスナッツ'
                         app.push_json(template(thumbnail, link, title, text))
