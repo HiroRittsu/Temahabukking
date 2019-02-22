@@ -150,6 +150,7 @@ def main():
                             app.push_json(select_template())
                             # 待機
                             wait = message_wait()
+                            app.push_msgs(userID, wait)
                             if wait == '店舗':
                                 app.push_msgs(userID, 'かしこまりました。')
                                 app.push_msgs(userID, '材料を準備いたします。')
@@ -164,7 +165,7 @@ def main():
                         app.push_json(select_template())
                         # 待機
                         wait = message_wait()
-                        print(wait)
+                        app.push_msgs(userID, wait)
                         if wait == '店舗':
                             app.push_msgs(userID, 'かしこまりました。')
                             app.push_msgs(userID, '材料を準備いたします。')
@@ -198,7 +199,7 @@ def main():
                             app.push_json(select_template())
                             # 待機
                             wait = message_wait()
-                            print(wait)
+                            app.push_msgs(userID, wait)
                             if wait == '店舗':
                                 app.push_msgs(userID, 'かしこまりました。')
                                 app.push_msgs(userID, '材料を準備いたします。')
@@ -213,6 +214,7 @@ def main():
                         app.push_json(select_template())
                         # 待機
                         wait = message_wait()
+                        app.push_msgs(userID, wait)
                         if wait == '店舗':
                             app.push_msgs(userID, 'かしこまりました。')
                             app.push_msgs(userID, '材料を準備いたします。')
@@ -247,7 +249,7 @@ def main():
                             app.push_json(select_template())
                             # 待機
                             wait = message_wait()
-                            print(wait)
+                            app.push_msgs(userID, wait)
                             if wait == '店舗':
                                 app.push_msgs(userID, 'かしこまりました。')
                                 app.push_msgs(userID, '材料を準備いたします。')
@@ -262,6 +264,7 @@ def main():
                         app.push_json(select_template())
                         # 待機
                         wait = message_wait()
+                        app.push_msgs(userID, wait)
                         if wait == '店舗':
                             app.push_msgs(userID, 'かしこまりました。')
                             app.push_msgs(userID, '材料を準備いたします。')
