@@ -85,12 +85,31 @@ def main():
                 # case1
                 if game_flag == True:
                     app.push_msgs(userID, 'ピッタリの料理をご提案します')
-                    # カツ丼
-                    thumbnail = 'https://image.walkerplus.com/lettuce/img/dish/1/S20140210031001A_000.png?x=450'
+                    # カツカレー
+                    thumbnail = 'https://img.cpcdn.com/recipes/4939420/m/49983e0dd58f3dc9ee5438c29c7d40be.jpg?u=20307638&p=1518680840'
                     link = 'https://sites.google.com/view/migly-sample/%E3%83%9B%E3%83%BC%E3%83%A0'
-                    title = 'カツ丼'
-                    text = '牡蠣 - 酒 - 玉ねぎ - にんじん - バター - にんにく - しょうが'
+                    title = 'カツカレー'
+                    text = 'とんかつ（チキンでも可） - じゃがいも - 人参 - 玉ねぎ - 福神漬け - オリーブオイル（食材炒め用） - バーモントカレー中辛 - こくまろ甘口 - ゴールデンカレー甘口 - S&Bカレーパウダー - 塩・胡椒 - 醤油 - オイスターソース - かつおダシ'
                     app.push_json(template(thumbnail, link, title, text))
+
+                    if response_wait() == 'no':
+                        app.push_msgs(userID, '別の料理を提案します')
+                        # 牡蠣カレー
+                        thumbnail = 'https://image.walkerplus.com/lettuce/img/dish/1/S20140210031001A_000.png?x=450'
+                        link = 'https://sites.google.com/view/migly-sample/%E3%83%9B%E3%83%BC%E3%83%A0'
+                        title = '牡蠣カレー'
+                        text = '牡蠣 - 酒 - 玉ねぎ - にんじん - バター - にんにく - しょうが'
+                        app.push_json(template(thumbnail, link, title, text))
+
+                        if response_wait() == 'yes':
+                            app.push_msgs(userID, 'かしこまりました。')
+                            app.push_msgs(userID, '材料を準備いたします。')
+                        else:
+                            app.push_msgs(userID, '提案できる料理がありません')
+                    else:
+                        app.push_msgs(userID, 'かしこまりました。')
+                        app.push_msgs(userID, '材料を準備いたします。')
+
                     game_flag = False
 
                 # case2
@@ -128,10 +147,10 @@ def main():
                 if work_flag == True and tired_flag == True:
                     app.push_msgs(userID, 'ピッタリの料理をご提案します')
                     # 手巻き寿司
-                    thumbnail = 'https://park.ajinomoto.co.jp/wp-content/uploads/2018/03/705987.jpeg'
-                    link = 'https://sites.google.com/view/migly-sample/%E3%83%9B%E3%83%BC%E3%83%A0'
+                    thumbnail = 'https://imgfp.hotp.jp/IMGH/10/40/P022821040/P022821040_238.jpg'
+                    link = 'https://sites.google.com/view/temahabokking0002/%E3%83%9B%E3%83%BC%E3%83%A0'
                     title = '手巻き寿司'
-                    text = 'イカ - サーモン - いくら - はまち - 鯛 - まぐろ - キュウリ - カイワレ大根 - 大葉'
+                    text = 'すっぽん様 - はくさい - 豆腐 - 長ネギ - がんもどき、お豆腐 - お好きな野菜 - 水 - 出し昆布 - 酒 - 醤油'
                     app.push_json(template(thumbnail, link, title, text))
 
                     if response_wait() == 'no':
@@ -152,8 +171,8 @@ def main():
                         app.push_msgs(userID, 'かしこまりました。')
                         app.push_msgs(userID, '材料を準備いたします。')
 
-                    sorry_flag = False
-                    angry_flag = False
+                    work_flag = False
+                    tired_flag = False
 
             if '試合' in msg:
                 game_flag = True
