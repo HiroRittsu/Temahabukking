@@ -126,7 +126,7 @@ def main():
                     # 手巻き寿司
                     thumbnail = 'https://park.ajinomoto.co.jp/wp-content/uploads/2018/03/705987.jpeg'
                     link = 'https://sites.google.com/view/temahabokking0002/%E3%83%9B%E3%83%BC%E3%83%A0'
-                    title = '手巻き寿司　1,740'
+                    title = '手巻き寿司　1,740円'
                     text = 'イカ - サーモン - いくら - はまち - 鯛 - まぐろ - キュウリ - カイワレ大根 - 大葉'
                     app.push_json(template(thumbnail, link, title, text))
 
