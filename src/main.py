@@ -134,7 +134,8 @@ def main():
             if '今日のご飯' in msg:
                 # case1
                 if game_flag == True:
-                    app.push_msgs(userID, 'ピッタリの料理をご提案します')
+                    app.push_msgs(userID, '気合の入る、こちらの料理はどうですか？')
+                    app.push_msgs(userID, '必勝祈願の定番、カツカレー！')
                     # カツカレー
                     thumbnail = 'https://img.cpcdn.com/recipes/4939420/m/49983e0dd58f3dc9ee5438c29c7d40be.jpg?u=20307638&p=1518680840'
                     link = 'https://sites.google.com/view/temahabokking0003/%E3%83%9B%E3%83%BC%E3%83%A0'
@@ -144,8 +145,8 @@ def main():
 
                     wait = response_wait(['yes', 'no', 'cancel'])
                     if wait == 'no':
-                        app.push_msgs(userID, '別の料理を提案します')
-
+                        app.push_msgs(userID, 'ではこちらの料理はどうですか？')
+                        app.push_msgs(userID, 'めで"たい"料理、ムニエル！')
                         # ムニエル
                         thumbnail = 'https://img.cpcdn.com/recipes/5516497/m/d8bfff3490f57def01e4ed004f190e07.jpg?u=27736998&p=1550589458'
                         link = 'https://sites.google.com/view/temahabokking0001/%E3%83%9B%E3%83%BC%E3%83%A0'
@@ -182,7 +183,8 @@ def main():
 
                 # case2
                 if sorry_flag == True or angry_flag == True:
-                    app.push_msgs(userID, 'ピッタリの料理をご提案します')
+                    app.push_msgs(userID, '二人の中をとりもつ、こちらの料理はどうですか？')
+                    app.push_msgs(userID, '二人で作る♡手巻き寿司！')
                     # 手巻き寿司
                     thumbnail = 'https://park.ajinomoto.co.jp/wp-content/uploads/2018/03/705987.jpeg'
                     link = 'https://sites.google.com/view/temahabokking0002/%E3%83%9B%E3%83%BC%E3%83%A0'
@@ -192,7 +194,8 @@ def main():
 
                     wait = response_wait(['yes', 'no', 'cancel'])
                     if wait == 'no':
-                        app.push_msgs(userID, '別の料理を提案します')
+                        app.push_msgs(userID, 'ではこちらの料理はどうですか？')
+                        app.push_msgs(userID, 'イライラを抑える、ナッツ料理！')
                         # ナッツサラダ
                         thumbnail = 'https://image.walkerplus.com/lettuce/img/dish/1/7013_0_0.jpg?x=450'
                         link = 'https://sites.google.com/view/temahabokking0006/%E3%83%9B%E3%83%BC%E3%83%A0'
@@ -230,7 +233,8 @@ def main():
 
                 # case3
                 if work_flag == True or tired_flag == True:
-                    app.push_msgs(userID, 'ピッタリの料理をご提案します')
+                    app.push_msgs(userID, '疲労回復に、こちらの料理はどうですか？')
+                    app.push_msgs(userID, '働く人の見方、すっぽん料理！')
                     # すっぽん鍋
                     thumbnail = 'https://imgfp.hotp.jp/IMGH/10/40/P022821040/P022821040_238.jpg'
                     link = 'https://sites.google.com/view/temahabokking0004/%E3%83%9B%E3%83%BC%E3%83%A0'
@@ -240,8 +244,8 @@ def main():
 
                     wait = response_wait(['yes', 'no', 'cancel'])
                     if wait == 'no':
-                        app.push_msgs(userID, '別の料理を提案します')
-
+                        app.push_msgs(userID, 'ではこちらの料理はどうですか？')
+                        app.push_msgs(userID, '今が旬の疲労回復アイテム、牡蠣料理！')
                         # 牡蠣カレー
                         thumbnail = 'https://image.walkerplus.com/lettuce/img/dish/1/S20140210031001A_000.png?x=450'
                         link = 'https://sites.google.com/view/temahabokking0005/%E3%83%9B%E3%83%BC%E3%83%A0'
