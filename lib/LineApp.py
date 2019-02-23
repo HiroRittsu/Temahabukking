@@ -49,11 +49,6 @@ app = Flask(__name__)
 @app.route("/callback", methods=['POST'])
 def callback():
     global postback, msgs, image, sticker, audio
-    print(len(postback))
-    print(len(msgs))
-    print(len(image))
-    print(len(sticker))
-    print(len(audio))
     id = 0
     signature = request.headers['X-Line-Signature']
 
@@ -87,6 +82,12 @@ def callback():
             sticker.append([id, event.message.id])
         if isinstance(event.message, AudioMessage):
             audio.append([id, event.message.id])
+
+    print(len(postback))
+    print(len(msgs))
+    print(len(image))
+    print(len(sticker))
+    print(len(audio))
 
     return 'OK'
 
