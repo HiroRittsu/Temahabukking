@@ -37,9 +37,9 @@ if channel_access_token is None:
     sys.exit(1)
 
 line_bot_api = LineBotApi(
-    '/07Z+OlPxitHyS23cLdU+jdE7XOhZJ8ABueC4ctVy/chTD3sxn3qUTRN66UoUH/weuD3MkL7twkVGs9Ik3tjAcD+NHBXU7t9HcRi+ebCcwuJq+RAG77Ad3P7WplaOgCx8qovCfUON3LiV5OZndRLtgdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('4ceb98627c0c99db6aa38531c54c3b02')
-parser = WebhookParser('4ceb98627c0c99db6aa38531c54c3b02')
+    'DvNsKeKTNGDsPDAHmEdzgifwYLtPdg1BV1+YAvz0a3TQmP7LCXbaZF6up4XHpR1Ye8XMItPbX8HB5zsuQLKe5m0YHWlNlp6EAZ73xJCoXZLyarr4HLikG2ZAobqAyn0Ay3ObOoIKHGgbCCL5eAwQUwdB04t89/1O/w1cDnyilFU=')
+handler = WebhookHandler('1a6c43c73240a4a03e5754e1f7959704')
+parser = WebhookParser('1a6c43c73240a4a03e5754e1f7959704')
 
 app = Flask(__name__)
 
