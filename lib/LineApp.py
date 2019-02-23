@@ -66,7 +66,6 @@ def callback():
 
     if 'groupId' in body:
         id = json.loads(body)["events"][0]["source"]["groupId"]
-        print(id)
 
     for event in events:
         if isinstance(event, PostbackEvent):
@@ -138,7 +137,9 @@ class LineApp:
             print("not addr")
 
     def get_msgs(self):
+        global msgs
         return msgs
 
     def get_postback(self):
+        global postback
         return postback
