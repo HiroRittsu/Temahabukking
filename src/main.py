@@ -11,8 +11,8 @@ from lib import LineApp
 
 app = LineApp.LineApp()
 
-# userID = 'U444d8a9ca45523b6fcda0226769d9983'
-userID = 'Ce768ea847f6963afa3f73a7d63d8e080'
+userID = 'U444d8a9ca45523b6fcda0226769d9983'
+# userID = 'Ce768ea847f6963afa3f73a7d63d8e080'
 
 history_msgs = []
 
@@ -98,19 +98,23 @@ def template(thumbnail, link, title, text):
     return data
 
 
-def response_wait():
+def response_wait(target: list):
     app.get_msgs().clear()
     while True:
         if not len(app.get_postback()) == 0:
-            return app.get_postback().pop(0)
+            sample = app.get_postback().pop(0)
+            if sample in target:
+                return sample
         time.sleep(0.1)
 
 
-def message_wait():
+def message_wait(target: list):
     app.get_msgs().clear()
     while True:
         if not len(app.get_msgs()) == 0:
-            return app.get_msgs().pop(0)[1]
+            sample = app.get_msgs().pop(0)[1]
+            if sample in target:
+                return sample
         time.sleep(0.1)
 
 
@@ -138,7 +142,7 @@ def main():
                     text = 'とんかつ（チキンでも可） - じゃがいも - 人参 - 玉ねぎ - 福神漬け - オリーブオイル（食材炒め用） - バーモントカレー中辛 - こくまろ甘口 - ゴールデンカレー甘口 - S&Bカレーパウダー - 塩・胡椒 - 醤油 - オイスターソース - かつおダシ'
                     app.push_json(template(thumbnail, link, title, text))
 
-                    wait = response_wait()
+                    wait = response_wait(['yes', 'no'])
                     if wait == 'no':
                         app.push_msgs(userID, '別の料理を提案します')
                         # 牡蠣カレー
@@ -148,10 +152,10 @@ def main():
                         text = '牡蠣 - 酒 - 玉ねぎ - にんじん - バター - にんにく - しょうが'
                         app.push_json(template(thumbnail, link, title, text))
 
-                        if response_wait() == 'yes':
+                        if response_wait(['yes', 'no']) == 'yes':
                             app.push_json(select_template())
                             # 待機
-                            wait = message_wait()
+                            wait = message_wait(['店舗', '自宅'])
                             if wait == '店舗':
                                 app.push_msgs(userID, 'かしこまりました。')
                                 app.push_msgs(userID, '材料を準備いたします。')
@@ -165,7 +169,7 @@ def main():
                     else:
                         app.push_json(select_template())
                         # 待機
-                        wait = message_wait()
+                        wait = message_wait(['店舗', '自宅'])
                         if wait == '店舗':
                             app.push_msgs(userID, 'かしこまりました。')
                             app.push_msgs(userID, '材料を準備いたします。')
@@ -185,7 +189,7 @@ def main():
                     text = 'イカ - サーモン - いくら - はまち - 鯛 - まぐろ - キュウリ - カイワレ大根 - 大葉'
                     app.push_json(template(thumbnail, link, title, text))
 
-                    wait = response_wait()
+                    wait = response_wait(['yes', 'no'])
                     if wait == 'no':
                         app.push_msgs(userID, '別の料理を提案します')
                         # ナッツサラダ
@@ -195,10 +199,10 @@ def main():
                         text = '牛ももステーキ用肉 - 塩 - ・粗びき黒こしょう - 春菊 - 紫玉ねぎ - ミックスナッツ'
                         app.push_json(template(thumbnail, link, title, text))
 
-                        if response_wait() == 'yes':
+                        if response_wait(['yes', 'no']) == 'yes':
                             app.push_json(select_template())
                             # 待機
-                            wait = message_wait()
+                            wait = message_wait(['店舗', '自宅'])
                             if wait == '店舗':
                                 app.push_msgs(userID, 'かしこまりました。')
                                 app.push_msgs(userID, '材料を準備いたします。')
@@ -212,7 +216,7 @@ def main():
                     else:
                         app.push_json(select_template())
                         # 待機
-                        wait = message_wait()
+                        wait = message_wait(['店舗', '自宅'])
                         if wait == '店舗':
                             app.push_msgs(userID, 'かしこまりました。')
                             app.push_msgs(userID, '材料を準備いたします。')
@@ -233,7 +237,7 @@ def main():
                     text = 'すっぽん様 - はくさい - 豆腐 - 長ネギ - がんもどき、お豆腐 - お好きな野菜 - 水 - 出し昆布 - 酒 - 醤油'
                     app.push_json(template(thumbnail, link, title, text))
 
-                    wait = response_wait()
+                    wait = response_wait(['yes', 'no'])
                     if wait == 'no':
                         app.push_msgs(userID, '別の料理を提案します')
                         # ムニエル
@@ -243,10 +247,10 @@ def main():
                         text = '鯛 - 塩・コショウ - 薄力粉 - セロリ茎 - トマト - 玉ねぎ - カシューナッツ - 乾燥スライスニンニク - パセリ(みじん切り) - バター - オリーブ油'
                         app.push_json(template(thumbnail, link, title, text))
 
-                        if response_wait() == 'yes':
+                        if response_wait(['yes', 'no']) == 'yes':
                             app.push_json(select_template())
                             # 待機
-                            wait = message_wait()
+                            wait = message_wait(['店舗', '自宅'])
                             if wait == '店舗':
                                 app.push_msgs(userID, 'かしこまりました。')
                                 app.push_msgs(userID, '材料を準備いたします。')
@@ -260,7 +264,7 @@ def main():
                     else:
                         app.push_json(select_template())
                         # 待機
-                        wait = message_wait()
+                        wait = message_wait(['店舗', '自宅'])
                         if wait == '店舗':
                             app.push_msgs(userID, 'かしこまりました。')
                             app.push_msgs(userID, '材料を準備いたします。')
