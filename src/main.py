@@ -99,20 +99,20 @@ def template(thumbnail, link, title, text):
 
 
 def response_wait(target: list):
-    app.get_msgs().clear()
+    LineApp.postback.clear()
     while True:
-        if not len(app.get_postback()) == 0:
-            sample = app.get_postback().pop(0)
+        if not len(LineApp.postback) == 0:
+            sample = LineApp.postback.pop(0)
             if sample in target:
                 return sample
         time.sleep(0.1)
 
 
 def message_wait(target: list):
-    app.get_msgs().clear()
+    LineApp.msgs.clear()
     while True:
-        if not len(app.get_msgs()) == 0:
-            sample = app.get_msgs().pop(0)[1]
+        if not len(LineApp.msgs) == 0:
+            sample = LineApp.msgs.pop(0)[1]
             if sample in target:
                 return sample
         time.sleep(0.1)
