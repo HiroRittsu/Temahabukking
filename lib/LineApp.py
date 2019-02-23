@@ -48,6 +48,12 @@ app = Flask(__name__)
 
 @app.route("/callback", methods=['POST'])
 def callback():
+    global postback, msgs, image, sticker, audio
+    print(len(postback))
+    print(len(msgs))
+    print(len(image))
+    print(len(sticker))
+    print(len(audio))
     id = 0
     signature = request.headers['X-Line-Signature']
 
