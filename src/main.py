@@ -82,7 +82,7 @@ def template(thumbnail, link, title, text):
                         },
                         {
                             "type": "postback",
-                            "label": "注文しません",
+                            "label": "別の料理",
                             "data": "no"
                         },
                         {
@@ -99,6 +99,7 @@ def template(thumbnail, link, title, text):
 
 
 def response_wait():
+    app.get_msgs().clear()
     while True:
         if not len(app.get_postback()) == 0:
             return app.get_postback().pop(0)
@@ -106,6 +107,7 @@ def response_wait():
 
 
 def message_wait():
+    app.get_msgs().clear()
     while True:
         if not len(app.get_msgs()) == 0:
             return app.get_msgs().pop(0)[1]
