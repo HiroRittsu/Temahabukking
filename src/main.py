@@ -142,7 +142,7 @@ def main():
                     text = 'とんかつ（チキンでも可） - じゃがいも - 人参 - 玉ねぎ - 福神漬け - オリーブオイル（食材炒め用） - バーモントカレー中辛 - こくまろ甘口 - ゴールデンカレー甘口 - S&Bカレーパウダー - 塩・胡椒 - 醤油 - オイスターソース - かつおダシ'
                     app.push_json(template(thumbnail, link, title, text))
 
-                    wait = response_wait(['yes', 'no'])
+                    wait = response_wait(['yes', 'no', 'cancel'])
                     if wait == 'no':
                         app.push_msgs(userID, '別の料理を提案します')
                         # 牡蠣カレー
@@ -152,7 +152,7 @@ def main():
                         text = '牡蠣 - 酒 - 玉ねぎ - にんじん - バター - にんにく - しょうが'
                         app.push_json(template(thumbnail, link, title, text))
 
-                        if response_wait(['yes', 'no']) == 'yes':
+                        if response_wait(['yes', 'no', 'cancel']) == 'yes':
                             app.push_json(select_template())
                             # 待機
                             wait = message_wait(['店舗', '自宅'])
@@ -189,7 +189,7 @@ def main():
                     text = 'イカ - サーモン - いくら - はまち - 鯛 - まぐろ - キュウリ - カイワレ大根 - 大葉'
                     app.push_json(template(thumbnail, link, title, text))
 
-                    wait = response_wait(['yes', 'no'])
+                    wait = response_wait(['yes', 'no', 'cancel'])
                     if wait == 'no':
                         app.push_msgs(userID, '別の料理を提案します')
                         # ナッツサラダ
@@ -199,7 +199,7 @@ def main():
                         text = '牛ももステーキ用肉 - 塩 - ・粗びき黒こしょう - 春菊 - 紫玉ねぎ - ミックスナッツ'
                         app.push_json(template(thumbnail, link, title, text))
 
-                        if response_wait(['yes', 'no']) == 'yes':
+                        if response_wait(['yes', 'no', 'cancel']) == 'yes':
                             app.push_json(select_template())
                             # 待機
                             wait = message_wait(['店舗', '自宅'])
@@ -237,7 +237,7 @@ def main():
                     text = 'すっぽん様 - はくさい - 豆腐 - 長ネギ - がんもどき、お豆腐 - お好きな野菜 - 水 - 出し昆布 - 酒 - 醤油'
                     app.push_json(template(thumbnail, link, title, text))
 
-                    wait = response_wait(['yes', 'no'])
+                    wait = response_wait(['yes', 'no', 'cancel'])
                     if wait == 'no':
                         app.push_msgs(userID, '別の料理を提案します')
                         # ムニエル
@@ -247,7 +247,7 @@ def main():
                         text = '鯛 - 塩・コショウ - 薄力粉 - セロリ茎 - トマト - 玉ねぎ - カシューナッツ - 乾燥スライスニンニク - パセリ(みじん切り) - バター - オリーブ油'
                         app.push_json(template(thumbnail, link, title, text))
 
-                        if response_wait(['yes', 'no']) == 'yes':
+                        if response_wait(['yes', 'no', 'cancel']) == 'yes':
                             app.push_json(select_template())
                             # 待機
                             wait = message_wait(['店舗', '自宅'])
