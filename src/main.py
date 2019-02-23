@@ -128,8 +128,8 @@ def main():
     app.push_msgs(userID, 'bot起動')
 
     while True:
-        if not len(app.get_msgs()) == 0:
-            msg = app.get_msgs().pop(0)[1]
+        if not len(LineApp.msgs) == 0:
+            msg = LineApp.msgs.pop(0)[1]
             history_msgs.append(msg)
             if '今日のご飯' in msg:
                 # case1
