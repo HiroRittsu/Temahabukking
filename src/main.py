@@ -145,11 +145,12 @@ def main():
                     wait = response_wait(['yes', 'no', 'cancel'])
                     if wait == 'no':
                         app.push_msgs(userID, '別の料理を提案します')
-                        # 牡蠣カレー
-                        thumbnail = 'https://image.walkerplus.com/lettuce/img/dish/1/S20140210031001A_000.png?x=450'
-                        link = 'https://sites.google.com/view/temahabokking0005/%E3%83%9B%E3%83%BC%E3%83%A0'
-                        title = '牡蠣カレー　840円'
-                        text = '牡蠣 - 酒 - 玉ねぎ - にんじん - バター - にんにく - しょうが'
+
+                        # ムニエル
+                        thumbnail = 'https://img.cpcdn.com/recipes/5516497/m/d8bfff3490f57def01e4ed004f190e07.jpg?u=27736998&p=1550589458'
+                        link = 'https://sites.google.com/view/temahabokking0001/%E3%83%9B%E3%83%BC%E3%83%A0'
+                        title = '鯛のムニエル　1,280円'
+                        text = '鯛 - 塩・コショウ - 薄力粉 - セロリ茎 - トマト - 玉ねぎ - カシューナッツ - 乾燥スライスニンニク - パセリ(みじん切り) - バター - オリーブ油'
                         app.push_json(template(thumbnail, link, title, text))
 
                         if response_wait(['yes', 'no', 'cancel']) == 'yes':
@@ -240,11 +241,12 @@ def main():
                     wait = response_wait(['yes', 'no', 'cancel'])
                     if wait == 'no':
                         app.push_msgs(userID, '別の料理を提案します')
-                        # ムニエル
-                        thumbnail = 'https://img.cpcdn.com/recipes/5516497/m/d8bfff3490f57def01e4ed004f190e07.jpg?u=27736998&p=1550589458'
-                        link = 'https://sites.google.com/view/temahabokking0001/%E3%83%9B%E3%83%BC%E3%83%A0'
-                        title = '鯛のムニエル　1,280円'
-                        text = '鯛 - 塩・コショウ - 薄力粉 - セロリ茎 - トマト - 玉ねぎ - カシューナッツ - 乾燥スライスニンニク - パセリ(みじん切り) - バター - オリーブ油'
+
+                        # 牡蠣カレー
+                        thumbnail = 'https://image.walkerplus.com/lettuce/img/dish/1/S20140210031001A_000.png?x=450'
+                        link = 'https://sites.google.com/view/temahabokking0005/%E3%83%9B%E3%83%BC%E3%83%A0'
+                        title = '牡蠣カレー　840円'
+                        text = '牡蠣 - 酒 - 玉ねぎ - にんじん - バター - にんにく - しょうが'
                         app.push_json(template(thumbnail, link, title, text))
 
                         if response_wait(['yes', 'no', 'cancel']) == 'yes':
