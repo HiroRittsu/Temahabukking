@@ -11,8 +11,8 @@ from lib import LineApp
 
 app = LineApp.LineApp()
 
-# userID = 'U444d8a9ca45523b6fcda0226769d9983'
-userID = 'Ce768ea847f6963afa3f73a7d63d8e080'
+userID = 'U444d8a9ca45523b6fcda0226769d9983'
+# userID = 'Ce768ea847f6963afa3f73a7d63d8e080'
 
 history_msgs = []
 
