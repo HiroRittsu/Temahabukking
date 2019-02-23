@@ -36,10 +36,11 @@ if channel_access_token is None:
     print('Specify LINE_CHANNEL_ACCESS_TOKEN as environment variable.')
     sys.exit(1)
 
+channel_access_token = '1a6c43c73240a4a03e5754e1f7959704'
 line_bot_api = LineBotApi(
     'DvNsKeKTNGDsPDAHmEdzgifwYLtPdg1BV1+YAvz0a3TQmP7LCXbaZF6up4XHpR1Ye8XMItPbX8HB5zsuQLKe5m0YHWlNlp6EAZ73xJCoXZLyarr4HLikG2ZAobqAyn0Ay3ObOoIKHGgbCCL5eAwQUwdB04t89/1O/w1cDnyilFU=')
-handler = WebhookHandler('1a6c43c73240a4a03e5754e1f7959704')
-parser = WebhookParser('1a6c43c73240a4a03e5754e1f7959704')
+handler = WebhookHandler(channel_access_token)
+parser = WebhookParser(channel_access_token)
 
 app = Flask(__name__)
 
